@@ -30,8 +30,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LSFT, XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, KC_RSFT, \
       KC_LCTL, KC_LGUI, KC_LALT,                     KC_SPC,          KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
       ),
+
   /*
-   *
    * ,-----------------------------------------------------------.
    * |Bl | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|  DEL  |
    * |-----------------------------------------------------------|
@@ -50,6 +50,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, KC_DOWN, _______, _______, _______, \
       _______, _______, _______, _______ , _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______ , _______, _______, _______, _______, \
       _______,  _______,  _______,                            KC_SPC,                               DEBUG,   RESET, _______, _______  \
+      ),
+
+  /* ADNW-inspired
+   * ,-----------------------------------------------------------.
+   * | ^ | 1|  2|  3|  4|  5|  6|  7|  8|  9|  0|  ß|   | Backsp |
+   * |-----------------------------------------------------------|
+   * |Tab  | K | U | Ü | . | Ä | V | G | C | L | J | F |   |     |
+   * |-----------------------------------------------------------|
+   * |       | H | I | E | A | O | D | T | R | S | ß |   |Return |
+   * |-----------------------------------------------------------|
+   * |Shift   | X | Y | Ö | , | Q | B | P | W | M | Z |    Shift |
+   * |-----------------------------------------------------------|
+   * |Ctrl|Gui |Alt |      Space            |Alt |Gui |Ctrl| FN0 |
+   * `-----------------------------------------------------------'
+   */
+  [2] = KEYMAP(
+      DE_CIRC, KC_1   , KC_2, KC_3 , KC_4  , KC_5   , KC_6, KC_7, KC_8, KC_9, KC_0, DE_SS, DE_ACUT, KC_BSPC, \
+      KC_TAB , DE_K   , DE_U, DE_UE, KC_DOT, DE_AE  , DE_V, DE_G, DE_C, DE_L, DE_J, DE_F , XXXXXXX, XXXXXXX, \
+      XXXXXXX, DE_H   , DE_I, DE_E , DE_A  , DE_O   , DE_D, DE_T, DE_R, DE_N, DE_S, DE_SS, XXXXXXX, KC_ENT , \
+      KC_LSFT, XXXXXXX, DE_X, DE_Y , DE_OE , KC_COMM, DE_Q, DE_B, DE_P, DE_W, DE_M, DE_Z , XXXXXXX, KC_RSFT, \
+      KC_LCTL, KC_LGUI, KC_LALT,                     KC_SPC,             KC_RALT, KC_RGUI, KC_RCTL, DF(0)    \
       ),
 };
 
