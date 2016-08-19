@@ -24,11 +24,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
   [0] = KEYMAP(
-      DE_CIRC, KC_1   , KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0 , DE_SS  , DE_ACUT, KC_BSPC, \
-      KC_TAB , KC_Q   , KC_W, KC_E, KC_R, KC_T, DE_Z, KC_U, KC_I, KC_O, KC_P , DE_UE  , DE_PLUS, DE_HASH, \
-      KC_FN0 , KC_A   , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, DE_OE, DE_AE  , XXXXXXX, KC_ENT , \
-      KC_LSFT, XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, KC_RSFT, \
-      KC_LCTL, KC_LGUI, KC_LALT,                     KC_SPC,          KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
+      DE_CIRC      , KC_1   , KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0 , DE_SS  , DE_ACUT, KC_BSPC, \
+      KC_TAB       , KC_Q   , KC_W, KC_E, KC_R, KC_T, DE_Z, KC_U, KC_I, KC_O, KC_P , DE_UE  , DE_PLUS, DE_HASH, \
+      KC_FN0       , KC_A   , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, DE_OE, DE_AE  , XXXXXXX, KC_ENT , \
+      OSM(MOD_LSFT), XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, KC_RSFT, \
+      KC_LCTL      , KC_LGUI, KC_LALT,                     KC_SPC,          KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
       ),
 
   /*
@@ -77,6 +77,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
     [0]  = ACTION_LAYER_TAP_KEY(1, KC_ESC),  // Layer 1 when hold, esc when tapped
 };
+
+static void handle_adnw_key(keyrecord_t *record, uint8_t id)
+{
+}
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
