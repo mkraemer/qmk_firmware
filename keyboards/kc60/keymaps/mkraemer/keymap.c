@@ -9,6 +9,9 @@
 #define COMM M(_DE_COMM)
 #define DOT M(_DE_DOT)
 
+// Left shift when held, space when tapped:
+#define SPC SFT_T(KC_SPC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Standard-ish QWERTZ
    * ,-----------------------------------------------------------.
@@ -18,17 +21,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * |Esc/FN | A | S | D | F | G | H | J | K | L | Ö | Ä |Return |
    * |-----------------------------------------------------------|
-   * |Shift   | Y | X | C | V | B | N | M | , | . | - |    Shift |
+   * |        | Y | X | C | V | B | N | M | , | . | - |          |
    * |-----------------------------------------------------------|
-   * |Ctrl|Gui |Alt |      Space            |Alt |Gui |Ctrl| FN1 |
+   * |Ctrl|Gui |Alt |      Space/Shift      |Alt |Gui |Ctrl| FN1 |
    * `-----------------------------------------------------------'
    */
   [0] = KEYMAP(
-      DE_CIRC      , KC_1   , KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0 , DE_SS  , DE_ACUT, KC_BSPC, \
-      KC_TAB       , KC_Q   , KC_W, KC_E, KC_R, KC_T, DE_Z, KC_U, KC_I, KC_O, KC_P , DE_UE  , DE_PLUS, DE_HASH, \
-      KC_FN0       , KC_A   , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, DE_OE, DE_AE  , XXXXXXX, KC_ENT , \
-      OSM(MOD_LSFT), XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, KC_RSFT, \
-      KC_LCTL      , KC_LGUI, KC_LALT,                     KC_SPC,          KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
+      DE_CIRC, KC_1   , KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0 , DE_SS  , DE_ACUT, KC_BSPC, \
+      KC_TAB , KC_Q   , KC_W, KC_E, KC_R, KC_T, DE_Z, KC_U, KC_I, KC_O, KC_P , DE_UE  , DE_PLUS, DE_HASH, \
+      KC_FN0 , KC_A   , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, DE_OE, DE_AE  , XXXXXXX, KC_ENT , \
+      XXXXXXX, XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, XXXXXXX, \
+      KC_LCTL      , KC_LGUI, KC_LALT,               SPC,             KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
       ),
 
   /*
