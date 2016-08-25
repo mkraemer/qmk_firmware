@@ -110,12 +110,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 
     switch (id) {
         case _DE_COMM: // comma or angled bracket open
-            if ((keyboard_report->mods & (MOD_BIT(KC_LALT))) != 0) {
-                // replace alt + comma with angle bracket open
-                unregister_code(KC_LALT);
+            if ((keyboard_report->mods & (MOD_BIT(KC_LCTRL))) != 0) {
+                // replace ctrl + comma with angle bracket open
+                unregister_code(KC_LCTRL);
                 register_code(DE_LESS);
                 unregister_code(DE_LESS);
-                register_code(KC_LALT);
+                register_code(KC_LCTRL);
             } else {
                 register_code(DE_COMM);
                 unregister_code(DE_COMM);
@@ -123,14 +123,14 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
             break;
 
         case _DE_DOT: // dot or angled bracket close
-            if ((keyboard_report->mods & (MOD_BIT(KC_LALT))) != 0) {
-                // replace alt + dot with angle bracket close
-                unregister_code(KC_LALT);
+            if ((keyboard_report->mods & (MOD_BIT(KC_LCTRL))) != 0) {
+                // replace ctrl + dot with angle bracket close
+                unregister_code(KC_LCTRL);
                 register_code(KC_LSFT);
                 register_code(DE_LESS);
                 unregister_code(DE_LESS);
                 unregister_code(KC_LSFT);
-                register_code(KC_LALT);
+                register_code(KC_LCTRL);
             } else {
                 register_code(DE_DOT);
                 unregister_code(DE_DOT);
