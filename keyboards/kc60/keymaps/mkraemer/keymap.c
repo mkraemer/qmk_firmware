@@ -9,9 +9,6 @@
 #define COMM M(_DE_COMM)
 #define DOT M(_DE_DOT)
 
-// Left shift when held, space when tapped:
-#define SPC SFT_T(KC_SPC)
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Standard-ish QWERTZ
    * ,-----------------------------------------------------------.
@@ -23,15 +20,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |-----------------------------------------------------------|
    * |        | Y | X | C | V | B | N | M | , | . | - |          |
    * |-----------------------------------------------------------|
-   * |Ctrl|Gui |Alt |      Space/Shift      |Alt |Gui |Ctrl| FN1 |
+   * |Ctrl|Gui |Alt |      Space/WM         |Alt |Gui |Ctrl| FN1 |
    * `-----------------------------------------------------------'
    */
   [0] = KEYMAP(
       DE_CIRC, KC_1   , KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0 , DE_SS  , DE_ACUT, KC_BSPC, \
       KC_TAB , KC_Q   , KC_W, KC_E, KC_R, KC_T, DE_Z, KC_U, KC_I, KC_O, KC_P , DE_UE  , DE_PLUS, DE_HASH, \
       KC_FN0 , KC_A   , KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, DE_OE, DE_AE  , XXXXXXX, KC_ENT , \
-      XXXXXXX, XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, XXXXXXX, \
-      KC_LCTL      , KC_LGUI, KC_LALT,               SPC,             KC_RALT, KC_RGUI, KC_RCTL, DF(2)    \
+      KC_LSFT, XXXXXXX, DE_Y, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, COMM, DOT  , DE_MINS, XXXXXXX, XXXXXXX, \
+      KC_LCTL      , KC_LGUI, KC_LALT,         LT(2,KC_SPC),          KC_RALT, KC_RGUI, KC_RCTL, DF(3)    \
       ),
 
   /*
@@ -50,9 +47,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [1] = KEYMAP(
       BL_STEP, KC_F1     , KC_F2     , KC_F3      , KC_F4  , KC_F5  , KC_F6  , KC_F7  , KC_F8  , KC_F9   , KC_F10 , KC_F11 , KC_F12 , KC_DEL , \
       _______, _______   , KC_MS_UP  , _______    , _______, _______, _______, KC_BTN1, KC_BTN3, KC_BTN2 , _______, _______, _______, _______, \
-      _______, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, KC_DOWN, _______, _______, _______, \
+      _______, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, _______, _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RIGHT, _______, _______, _______, _______, \
       _______, _______   , _______   , _______    , _______, KC_VOLD, KC_VOLU, KC_MUTE, _______, _______ , _______, _______, _______, _______, \
       _______,  _______,  _______,                                 KC_SPC,                                   DEBUG,   RESET, _______, _______  \
+      ),
+  /*
+   * ,-----------------------------------------------------------.
+   * |   | F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|  DEL  |
+   * |-----------------------------------------------------------|
+   * |     |   |MUP|   |   |   |   | M1| M3| M2|   |   |   |     |
+   * |-----------------------------------------------------------|
+   * |       |MLT|MDW|MRT|   |   |LFT|DWN| UP|RGT|   |   |       |
+   * |-----------------------------------------------------------|
+   * |        |   |   |   | V-| V+|MTE|   |   |   |   |          |
+   * |-----------------------------------------------------------|
+   * |    |    |    |      Space            |DBG |RST |    |     |
+   * `-----------------------------------------------------------'
+   */
+  [2] = KEYMAP(
+      _______, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5), LGUI(KC_6), LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), _______, _______, _______, _______, \
+      _______, LALT(KC_J), LGUI(KC_K), LALT(KC_K), _______   , _______   , _______   , _______   , _______   , _______   , _______, _______, _______, _______, \
+      _______, LGUI(KC_H), LGUI(KC_J), LGUI(KC_L), _______   , _______   , _______   , _______   , _______   , _______   , _______, _______, _______, LGUI(KC_ENT), \
+      _______, _______   , _______   , _______   , _______   , _______   , _______   , _______   , _______   , _______   , _______, _______, _______, _______, \
+      _______, _______   , _______   ,                      _______                                             , _______   , _______   , _______   , _______  \
       ),
 
   /* ADNW-inspired
@@ -68,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |Ctrl|Gui |Alt |      Space            |Alt |Gui |Ctrl| FN0 |
    * `-----------------------------------------------------------'
    */
-  [2] = KEYMAP(
+  [3] = KEYMAP(
       DE_CIRC, KC_1   , KC_2, KC_3 , KC_4  , KC_5   , KC_6, KC_7, KC_8, KC_9, KC_0, DE_SS, DE_ACUT, KC_BSPC, \
       KC_TAB , DE_K   , DE_U, DE_UE, KC_DOT, DE_AE  , DE_V, DE_G, DE_C, DE_L, DE_J, DE_F , XXXXXXX, XXXXXXX, \
       XXXXXXX, DE_H   , DE_I, DE_E , DE_A  , DE_O   , DE_D, DE_T, DE_R, DE_N, DE_S, DE_SS, XXXXXXX, KC_ENT , \
