@@ -66,11 +66,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-----------------------------------------------------------'
    */
   [2] = KEYMAP(
-      DE_CIRC, KC_1   , KC_2, KC_3 , KC_4  , KC_5   , KC_6, KC_7, KC_8, KC_9, KC_0, DE_MINS, XXXXXXX, KC_BSPC, \
-      KC_TAB , DE_K   , DE_U, DE_UE, KC_DOT, DE_AE  , DE_V, DE_G, DE_C, DE_L, DE_J, DE_F   , MO(4), XXXXXXX, \
-      MO(4), DE_H   , DE_I, DE_E , DE_A  , DE_O   , DE_D, DE_T, DE_R, DE_N, DE_S, DE_SS  , XXXXXXX, KC_ENT , \
-      MO(3)  , XXXXXXX, DE_X, DE_Y , DE_OE , KC_COMM, DE_Q, DE_B, DE_P, DE_W, DE_M, DE_Z   , XXXXXXX, MO(3)  , \
-      KC_LCTL, KC_LGUI, KC_LALT,                     LT(5,KC_SPC),             KC_RALT, KC_RGUI, KC_RCTL, DF(0)    \
+      DE_CIRC, KC_1   , KC_2   , KC_3 , KC_4   , KC_5   , KC_6   , KC_7   , KC_8      , KC_9, KC_0, DE_MINS, XXXXXXX, KC_BSPC, \
+      KC_TAB , DE_K   , DE_U   , DE_UE, KC_DOT , DE_AE  , DE_V   , DE_G   , DE_C      , DE_L, DE_J, DE_F   , XXXXXXX, XXXXXXX, \
+      LT(4   , KC_ESC), DE_H   , DE_I , DE_E   , DE_A   , DE_O   , DE_D   , DE_T      , DE_R, DE_N, DE_S   , DE_SS  , XXXXXXX, LT(4, KC_ENT), \
+      MO(3)  , XXXXXXX, DE_X   , DE_Y , DE_OE  , KC_COMM, DE_Q   , DE_B   , DE_P      , DE_W, DE_M, DE_Z   , XXXXXXX, MO(3)  , \
+      KC_LCTL, KC_LGUI, KC_LALT,                          LT(5 , KC_SPC),                  KC_RALT, KC_RGUI, KC_RCTL, DF(0)    \
       ),
 
   /* ADNW-inspired shift
@@ -88,8 +88,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [3] = KEYMAP(
       DE_CIRC, S(DE_CIRC), S(KC_3), XXXXXXX , UC(0x00bb), UC(0x00ab), S(KC_4), DE_EURO, UC(0x201E), UC(0x201c), _______, UC(0x2014), DE_ACUT, KC_BSPC, \
-      KC_TAB , S(DE_K)   , S(DE_U), S(DE_UE), KC_DOT    , S(DE_AE)  , S(DE_V), S(DE_G), S(DE_C)   , S(DE_L)   , S(DE_J), S(DE_F)   , MO(4)  , XXXXXXX, \
-      _______, S(DE_H)   , S(DE_I), S(DE_E) , S(DE_A)   , S(DE_O)   , S(DE_D), S(DE_T), S(DE_R)   , S(DE_N)   , S(DE_S), UC(0x1e9e), XXXXXXX, KC_ENT , \
+      KC_TAB , S(DE_K)   , S(DE_U), S(DE_UE), KC_DOT    , S(DE_AE)  , S(DE_V), S(DE_G), S(DE_C)   , S(DE_L)   , S(DE_J), S(DE_F)   , XXXXXXX, XXXXXXX, \
+      _______, S(DE_H)   , S(DE_I), S(DE_E) , S(DE_A)   , S(DE_O)   , S(DE_D), S(DE_T), S(DE_R)   , S(DE_N)   , S(DE_S), UC(0x1e9e), XXXXXXX, _______, \
       _______, XXXXXXX   , S(DE_X), S(DE_Y) , S(DE_OE)  , DE_MINS   , S(DE_Q), S(DE_B), S(DE_P)   , S(DE_W)   , S(DE_M), S(DE_Z)   , XXXXXXX, _______, \
       _______,_______,_______,                            KC_SPC,                       _______,_______,_______, _______    \
       ),
@@ -109,8 +109,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    */
   [4] = KEYMAP(
       _______, _______     , _______   , _______, _______, _______   , _______, _______, _______, _______, _______, _______, _______, KC_BSPC, \
-      _______, RALT(KC_DOT), S(DE_MINS), DE_LBRC, DE_RBRC, DE_CIRC   , DE_EXLM, DE_LESS, DE_MORE, DE_EQL , DE_AMPR, _______, XXXXXXX, XXXXXXX, \
-      _______, DE_BSLS     , S(KC_7)   , DE_LCBR, DE_RCBR, S(DE_PLUS), DE_QST , DE_LPRN, DE_RPRN, DE_MINS, DE_COLN, DE_AT  , XXXXXXX, KC_ENT , \
+      _______, RALT(KC_DOT), S(DE_MINS), DE_LBRC, DE_RBRC, DE_CIRC   , DE_EXLM, DE_LESS, DE_MORE, DE_EQL , DE_AMPR, _______, _______, XXXXXXX, \
+      _______, DE_BSLS     , S(KC_7)   , DE_LCBR, DE_RCBR, S(DE_PLUS), DE_QST , DE_LPRN, DE_RPRN, DE_MINS, DE_COLN, DE_AT  , XXXXXXX, _______, \
       _______, XXXXXXX     , DE_HASH   , DE_DLR , DE_PIPE  , DE_TILD, XXXXXXX, DE_PLUS, DE_PERC, DE_DQOT, DE_QUOT,  DE_SCLN, XXXXXXX, _______, \
       _______, _______, KC_LALT,                            KC_SPC,                       KC_RALT, KC_RGUI, KC_RCTL, _______    \
       ),
