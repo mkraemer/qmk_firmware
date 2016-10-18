@@ -54,8 +54,8 @@ void unicode_input_finish (void) {
     unregister_code(KC_LALT);
     break;
   case UC_LNX:
-    register_code(KC_SPC);
-    unregister_code(KC_SPC);
+    register_code(KC_ENT);
+    unregister_code(KC_ENT);
     break;
   }
 }
