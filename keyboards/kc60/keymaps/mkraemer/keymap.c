@@ -171,8 +171,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       X, LGUI(KC_1), LGUI(KC_2), LGUI(KC_3), LGUI(KC_4), LGUI(KC_5), LGUI(KC_6), LGUI(KC_7), LGUI(KC_8), LGUI(KC_9), X, X, X, X           , \
       X, X         , LGUI(KC_W), LGUI(KC_E), LGUI(KC_R), X         , X         , X         , KC_UP     , X         , X, X, X, X           , \
       X, X         , LGUI(KC_S), LGUI(KC_D), LGUI(KC_F), X         , X         , KC_LEFT   , KC_DOWN   , KC_RIGHT  , X, X, X, LGUI(KC_ENT), \
-      X, X         , X         , X         , X         , X         , X         , X         , X         , X         , X, X, X, X           , \
-      X, X         , _         , _         , X         , _         , X         , X         , X  \
+      _, X         , X         , X         , X         , X         , X         , X         , X         , X         , X, X, X, X           , \
+      _, X         , _         , _         , X         , _         , X         , X         , X  \
       ),
   [7] = KEYMAP( // emoji
       X ,  EM(GRIN) ,  EM(TJOY)   ,  EM(SMILE)  ,  EM(HEART)  ,  EM(EYERT) ,  EM(CRY) ,  EM(SMEYE) ,  EM(KISS)  ,  EM(WINK) ,  X ,  X ,  X ,  EM(POO) ,  \
